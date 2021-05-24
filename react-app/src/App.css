@@ -1,0 +1,18 @@
+.wrapper {
+  width: 500px;
+  max-width: 80%;
+  display: block;
+  margin: 50px auto;
+  padding: 20px 50px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  min-height: 80vh;
+  white-space: nowrap;
+}
+
+@media (max-width: 850px) {
+ .wrapper {
+    border-left: none;
+    border-right: none;
+  } 
+}

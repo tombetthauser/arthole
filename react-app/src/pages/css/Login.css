@@ -1,0 +1,65 @@
+.login-h1 {
+  font-weight: 100;  
+}
+
+.login-h2 {
+  font-weight: 100;
+}
+
+.login-wrapper {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 30px auto;
+  padding: 15px 0px 50px;
+}
+
+.login-form_label {
+  display: block;
+}
+
+.login-form__input {
+  display: block;
+  margin-bottom: 12.5px;
+}
+
+.login-form_label {
+  display: none;
+}
+
+.login-form__input {
+  /* border: 1px solid black; */
+  width: 200px;
+  box-sizing: border-box;
+  padding: 7.5px 10px 6px;
+  font-size: 14px;
+  font-family: serif;
+  letter-spacing: .25px;
+}
+
+.login-form__input:nth-last-of-type(1) {
+  margin-bottom: 25px;
+}
+
+.login-form__submit {
+  letter-spacing: .5px;
+  border: 1px solid black;
+  border-radius: 0px;
+  background-color: white;
+  /* color: white; */
+  width: 150px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: serif;
+  font-weight: 700;
+  padding: 5px 27px;
+}
+
+.login-form__submit:hover {
+  cursor: pointer;
+}
+
+.signup-text {
+  white-space: normal;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
