@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 
-const NavBar = () => {
+const NavBar = ({ setAuthenticated }) => {
   return (
     <nav>
       <ul>
@@ -27,7 +27,7 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <LogoutButton />
+          <LogoutButton setAuthenticated={setAuthenticated} />
         </li>
       </ul>
     </nav>
