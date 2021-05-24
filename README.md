@@ -1,5 +1,7 @@
 # Flask React Project
 
+(*mic check*)
+
 This is the backend for the Flask React project.
 
 ## Getting started
