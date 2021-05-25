@@ -29,10 +29,11 @@ img {
 .intro-text__medium-list {
   font-family: serif;
   margin: 35px 0;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 17.5px;
+  line-height: 22.5px;
   padding-left: 0;
   list-style: none;
+  /* color: red; */
 }
 
 .intro-text__links {

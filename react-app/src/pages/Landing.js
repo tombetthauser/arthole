@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/Landing.css';
-import Links from './Links.js'
+import Links from '../components/Links.js'
 import { Link } from "react-router-dom";
 
 function Landing() {
@@ -21,9 +21,10 @@ function Landing() {
           <li>find art</li>
         </ul>
         <ul className="intro-text__medium-list">
-          <li>funded by nobody</li>
-          <li>no ads / no bots / no narcs</li>
-          <li>built for idiots by poor people</li>
+          <li> </li>
+          <li>a confused exercise in futility</li>
+          <li>no ads / no bots / no coherent business model</li>
+          <li>built for free by deadbeat art hippies</li>
         </ul>
         <ul className="intro-text__links">
           <Links />

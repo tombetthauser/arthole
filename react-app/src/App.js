@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Landing from "./components/Landing.js"
+import Landing from "./pages/Landing.js"
 import Login from "./pages/Login.js"
 import Signup from "./pages/Signup.js"
 import Demo from "./pages/Demo.js"

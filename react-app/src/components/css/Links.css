@@ -26,14 +26,14 @@ img {
   list-style: none;
 }
 
-.intro-text__medium-list {
+/* .intro-text__medium-list {
   font-family: serif;
   margin: 35px 0;
   font-size: 25px;
   line-height: 30px;
   padding-left: 0;
   list-style: none;
-}
+} */
 
 .intro-text__links {
   font-family: serif;
