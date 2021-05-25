@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      { user ? <p>welcome back {user.email}</p> : <p>you are not currently logged in</p> }
+      { user ? <p>welcome back {user.username}</p> : <p>you are not currently logged in</p> }
       <BrowserRouter basename="/arthole">
         <Switch>
           <Route path="/" exact component={Landing} />

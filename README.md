@@ -1,3 +1,20 @@
+<!--  
+
+   To Do list:
+
+   1. get login working
+   2. get logout working
+   3. get sign up working
+   4. get profile page showing basic info
+   5. get image upload working
+   7. get swipe roulette working
+   8. get matches working
+   9. get messages working
+   10. get map feature working
+      * how many artists are nearby right now?
+
+-->
+
 # Flask React Project
 
 (*mic check*)
@@ -14,9 +31,9 @@ This is the backend for the Flask React project.
 
 2. Install dependencies
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+   ```bash
+   pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
+   ```
 
 3. Create a **.env** file based on the example with proper settings for your
    development environment
