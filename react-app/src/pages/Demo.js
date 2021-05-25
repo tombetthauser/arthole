@@ -1,10 +1,13 @@
 import './css/Demo.css';
 import Header from '../components/Header.js'
 import Links from '../components/Links.js';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import demoSet from '../assets/demo-urls.js'
 
 const Demo = () => {
+  const user = useSelector(state => state.session.user);
+  const [footerMessage, setFooterMessage] = useState(true);
   let imageIdx = Math.floor(Math.random() * demoSet.length);
 
   const images = [];
@@ -60,6 +63,7 @@ const Demo = () => {
   const hideFooterText = () => {
     const footer = document.querySelector(".demo-footer");
     footer.classList.toggle("demo-footer__hidden");
+    // setFooterMessage(false);
     // setTimeout(() => {footer.style.display = "none"}, 1000)
   }
 
@@ -67,20 +71,23 @@ const Demo = () => {
     <div>
       <Header />
       <div className="demo-wrapper">
-        <div className="test">
+        <div className="test current-image">
           <img className="demo-img"/>
         </div>
         <br />
         <button className="demo-form__submit" type="submit" onClick={next}>Skip</button>
         <button className="demo-form__submit" type="submit" onClick={next}>Like</button>
       </div>
-      <div className="demo-footer">
-        <p className="footer-text">
-          * You are not currently logged in. You are free to explore but you're likes will not be saved and you will not be able to connect with or message artists.
-        </p>
-        <button onClick={hideFooterText} className="footer-button">got it</button>
-      </div>
-      <Links />
+        { user || !footerMessage
+          ? null
+          : <div className="demo-footer">
+              <p className="footer-text">
+                * You are not currently logged in. You are free to explore but you're likes will not be saved and you will not be able to connect with or message artists.
+              </p>
+              <button onClick={hideFooterText} className="footer-button">got it</button>
+            </div>
+        }
+      {/* <Links /> */}
     </div>
   )
 }
