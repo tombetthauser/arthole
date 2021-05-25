@@ -48,7 +48,7 @@ body {
   box-sizing: border-box;
   font-size: 14px;
   font-family: serif;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 
 .demo-form__submit:nth-of-type(1) {

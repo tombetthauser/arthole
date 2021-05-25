@@ -31,24 +31,8 @@ function Login() {
       <div className="login-wrapper">
         <h2 className="login-h2">Log In</h2>
         <form className="login-form" onSubmit={onLogin}>
-          <input
-            className="login-form__input"
-            placeholder="Email Address"
-            name="email"
-            type="text"
-            value={email}
-            onChange={updateEmail}
-            required
-            />
-          <input
-            className="login-form__input"
-            placeholder="Password"
-            name="password"
-            type="password"
-            value={password}
-            onChange={updatePassword}
-            required
-          />
+          <input className="login-form__input" placeholder="Email Address" name="email" type="text" value={email} onChange={updateEmail} required />
+          <input className="login-form__input" placeholder="Password" name="password" type="password" value={password} onChange={updatePassword} required />
           <button className="login-form__submit" type="submit">Log In</button>
         </form>
       </div>

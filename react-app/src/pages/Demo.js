@@ -71,8 +71,8 @@ const Demo = () => {
           <img className="demo-img"/>
         </div>
         <br />
-        <button className="demo-form__submit" type="submit" onClick={next}>Pass</button>
-        <button className="demo-form__submit" type="submit" onClick={next}>Love it</button>
+        <button className="demo-form__submit" type="submit" onClick={next}>Skip</button>
+        <button className="demo-form__submit" type="submit" onClick={next}>Like</button>
       </div>
       <div className="demo-footer">
         <p className="footer-text">
