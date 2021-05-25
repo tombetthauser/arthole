@@ -70,3 +70,8 @@ img {
   transform: translateY(2px);
   margin: auto 3px;
 }
+
+.github-link {
+  text-decoration: none;
+  color: rgb(73, 106, 172);
+}

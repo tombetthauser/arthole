@@ -22,9 +22,9 @@ function Landing() {
         </ul>
         <ul className="intro-text__medium-list">
           <li> </li>
-          <li>a confused exercise in futility</li>
-          <li>no ads / no bots / no coherent business model</li>
-          <li>built for free by deadbeat art hippies</li>
+          <li>no ads / no business model / no snitches</li>
+          <li>built for free for no particular reason</li>
+          <li>check out the codebase on <a className="github-link" target="new" href="https://github.com/tombetthauser/arthole">github</a></li>
         </ul>
         <ul className="intro-text__links">
           <Links />
