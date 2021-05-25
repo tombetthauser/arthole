@@ -2,6 +2,8 @@ import './css/Links.css';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import React, { useEffect } from 'react';
+import LogoutButton from './auth/LogoutButton';
+
 
 
 function Links() {
@@ -43,6 +45,9 @@ function Links() {
               ? <Link to={`/demo`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; art</Link>
               : <Link to={`/demo`} className="intro-text__link">&gt; art</Link>
           }
+        </li>
+        <li>
+          <LogoutButton />
         </li>
       </ul>
     </div>
