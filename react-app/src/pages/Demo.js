@@ -4,8 +4,10 @@ import Links from '../components/Links.js';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import demoSet from '../assets/demo-urls.js'
+import { useHistory } from "react-router-dom";
 
 const Demo = () => {
+  const history = useHistory();
   const user = useSelector(state => state.session.user);
   const [footerMessage, setFooterMessage] = useState(true);
   let imageIdx = Math.floor(Math.random() * demoSet.length);
@@ -62,9 +64,9 @@ const Demo = () => {
 
   const hideFooterText = () => {
     const footer = document.querySelector(".demo-footer");
-    footer.classList.toggle("demo-footer__hidden");
+    footer.style.opacity = 0;
     // setFooterMessage(false);
-    // setTimeout(() => {footer.style.display = "none"}, 1000)
+    setTimeout(() => { footer.classList.add("demo-footer__hidden") }, 500)
   }
 
   return (
@@ -84,7 +86,8 @@ const Demo = () => {
               <p className="footer-text">
                 * You are not currently logged in. You are free to explore but you're likes will not be saved and you will not be able to connect with or message artists.
               </p>
-              <button onClick={hideFooterText} className="footer-button">got it</button>
+              <button onClick={() => history.push("/login")} className="footer-button">login / signup</button>
+              <p onClick={hideFooterText} className="footer-hide">ⓧ</p>
             </div>
         }
       {/* <Links /> */}

@@ -35,15 +35,23 @@ const Header = () => {
         <span onClick={toggleDropdown} className="navburger-span"><div></div></span>
       </h1>
       <div className="dropdown dropdown--hidden">
-        { user 
-          ? <a className="dropdown_link">&gt; {user.username}</a>
-          : <a className="dropdown_link" onClick={() => history.push("/")}>&gt; home</a>
+        { user && 
+          <>
+            <a className="dropdown_link">&gt; {user.username}</a>
+          </>
+        }
+        { !user && 
+          <>
+            <a className="dropdown_link" onClick={() => history.push("/")}>&gt; home</a>
+            <a className="dropdown_link" onClick={() => history.push("/login")}>&gt; login</a>
+            <a className="dropdown_link" onClick={() => history.push("/signup")}>&gt; signup</a>
+          </>
         }
         <a className="dropdown_link">&gt; messages</a>
         <a className="dropdown_link">&gt; map</a>
-        { user
-          ? <a className="dropdown_link" onClick={onLogout}>&gt; logout</a>
-          : <a className="dropdown_link" onClick={() => history.push("/login")}>&gt; login</a>
+        <a className="dropdown_link">&gt; artists</a>
+        { user && 
+          <a className="dropdown_link" onClick={onLogout}>&gt; logout</a>
         }
       </div>
     </div>

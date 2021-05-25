@@ -24,7 +24,7 @@ function Landing() {
           <li> </li>
           <li>no ads / no business model / no snitches</li>
           <li>built for free for no particular reason</li>
-          <li>check out the codebase on <a className="github-link" target="new" href="https://github.com/tombetthauser/arthole">github</a></li>
+          <li>check out the code on <a className="github-link" target="new" href="https://github.com/tombetthauser/arthole">github</a></li>
         </ul>
         <ul className="intro-text__links">
           <Links />

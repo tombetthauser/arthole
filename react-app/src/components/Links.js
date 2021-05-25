@@ -2,13 +2,15 @@ import './css/Links.css';
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import React, { useEffect } from 'react';
-import LogoutButton from './auth/LogoutButton';
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../store/session";
 
 
 
 function Links() {
   const location = useLocation().pathname;
-  console.log(location)
+  const user = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (location === "/demo") {
@@ -17,37 +19,44 @@ function Links() {
     }
   })
 
+  const onLogout = async () => {
+    await dispatch(logout());
+  }
+
   return (
     <div className="intro-text">
       <ul className="intro-text__links">
-        <li>
-          {
-            location === "/login"
-              ? <Link to={`/login`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; login</Link>
-              : <Link to={`/login`} className="intro-text__link">&gt; login</Link>
-          }
-        </li>
-        <li>
-          {
-            location === "/signup"
-              ? <Link to={`/signup`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; signup</Link>
-              : <Link to={`/signup`} className="intro-text__link">&gt; signup</Link>
-          }
-        </li>
-        {/* {
-          location === "/" 
-            ? null 
-            : <li><Link to={`/`} className="intro-text__link">back</Link></li>
-        } */}
+        { user &&  
+            <>
+              <li>&gt; { user.username }</li>
+              <li><a className="intro-text__link" onClick={onLogout}>&gt; logout</a></li>
+              <li><Link to={`/`} className="intro-text__link">&gt; messages</Link></li>
+              <br />
+              <li><Link to={`/`} className="intro-text__link">&gt; map</Link></li>
+              <li><Link to={`/`} className="intro-text__link">&gt; artists</Link></li>
+            </>
+        }
+        { location !== "/" &&  
+            <li><Link to={`/`} className="intro-text__link">&gt; home</Link></li>
+        }
+        { location === "/login" && !user && 
+            <li><Link to={`/login`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; login</Link></li>
+        }
+        {location !== "/login" && !user &&
+            <li><Link to={`/login`} className="intro-text__link">&gt; login</Link></li>
+        }
+        { location === "/signup" && !user && 
+            <li><Link to={`/signup`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; signup</Link></li>
+        }
+        {location !== "/signup" && !user &&
+            <li><Link to={`/signup`} className="intro-text__link">&gt; signup</Link></li>
+        }
         <li>
           {
             location === "/demo"
-              ? <Link to={`/demo`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; art</Link>
-              : <Link to={`/demo`} className="intro-text__link">&gt; art</Link>
+              ? <Link to={`/demo`} className="intro-text__link disabled-link" onClick={e => e.preventDefault()}>&gt; arthole</Link>
+              : <Link to={`/demo`} className="intro-text__link">&gt; arthole</Link>
           }
-        </li>
-        <li>
-          <LogoutButton />
         </li>
       </ul>
     </div>
