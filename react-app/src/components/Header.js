@@ -45,7 +45,7 @@ const Header = () => {
       <div className="dropdown">
         { user && 
           <>
-            <a className="dropdown_link">&gt; {user.username}</a>
+            <a className="dropdown_link" onClick={() => history.push(`user/${user.id}`)}>&gt; {user.username}</a>
           </>
         }
         { !user && 
