@@ -14,7 +14,7 @@ def seed_users():
         bfa='UCSC, BS Computer Science 2013',
         mfa=None,
         link_text='my website',
-        link_url='http://www.y9k.xyz',
+        link_url='http://y9k.xyz',
         user_type='fan'
     )
 

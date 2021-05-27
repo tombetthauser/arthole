@@ -12,7 +12,7 @@ const getUsers = users => ({
   payload: users
 })
 
-const initialState = { users: {} };
+const initialState = {};
 
 export const fetchUsers = () => async (dispatch) => {
   const response = await fetch('/api/users', {
@@ -32,12 +32,20 @@ export const fetchUser = (userId) => async (dispatch) => {
   dispatch(getUser(data));
 }
 
+const normalizeFetchAll = (fetchDataArray) => {
+  const normalizedData = {};
+  fetchDataArray.users.forEach(ele => {
+    normalizedData[ele.id] = ele;
+  });
+  return normalizedData;
+}
+
 export default function reducer(state=initialState, action) {
   switch (action.type) {
     case GET_USER:
-      return { users: {...state.users, [action.payload.id]: action.payload}}
+      return { ...state.users, [action.payload.id]: action.payload }
     case GET_USERS:
-      return { users: action.payload }
+      return normalizeFetchAll(action.payload)
     default:
       return state;
   }
