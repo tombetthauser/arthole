@@ -1,3 +1,7 @@
+Schema Mockup
+https://drawsql.app/app-academy-22/diagrams/arthole-mvp
+
+
 making a new alembic migration
 
 pipenv shell
