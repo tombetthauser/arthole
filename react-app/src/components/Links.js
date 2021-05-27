@@ -30,10 +30,7 @@ function Links() {
             <>
               <li>&gt; { user.username }</li>
               <li><a className="intro-text__link" onClick={onLogout}>&gt; logout</a></li>
-              <li><Link to={`/`} className="intro-text__link">&gt; messages</Link></li>
-              <br />
-              <li><Link to={`/`} className="intro-text__link">&gt; map</Link></li>
-              <li><Link to={`/`} className="intro-text__link">&gt; artists</Link></li>
+              <li><a className="intro-text__link" onClick={onLogout}>&gt; post</a></li>
             </>
         }
         { location !== "/" &&  

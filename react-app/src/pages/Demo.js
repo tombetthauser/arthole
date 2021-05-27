@@ -84,7 +84,7 @@ const Demo = () => {
           ? null
           : <div className="demo-footer">
               <p className="footer-text">
-                * You are not currently logged in. You are free to explore but you're likes will not be saved and you will not be able to connect with or message artists.
+                You are not currently logged in but feel free to explore!<br />If you want your likes to be saved or to be able to message artists you don't have to be an artist to sign up. It's quick and easy!
               </p>
               <button onClick={() => history.push("/login")} className="footer-button">login / signup</button>
               <p onClick={hideFooterText} className="footer-hide">ⓧ</p>

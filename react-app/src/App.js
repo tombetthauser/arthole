@@ -5,6 +5,7 @@ import Landing from "./pages/Landing.js"
 import Login from "./pages/Login.js"
 import Signup from "./pages/Signup.js"
 import Demo from "./pages/Demo.js"
+import Post from "./pages/Post.js"
 import { authenticate } from "./store/session";
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/signup" exact component={Signup} />
           <Route path="/demo" exact component={Demo} />
+          <Route path="/post" exact component={Post} />
         </Switch>
       </BrowserRouter>
     </div>

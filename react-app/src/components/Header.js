@@ -28,13 +28,21 @@ const Header = () => {
     dropdown = document.querySelector(".dropdown");
   })
 
+  const placeHolderNum = () => {
+    if (user && Math.random() > .15) {
+      return ` (${Math.floor(Math.random() * 14) + 1})`;
+    } else {
+      return ``;
+    }
+  }
+
   return (
     <div>
       <h1 className="header-h1">
         <span onClick={() => { history.push(`/`) }}>ARTHOLE</span>
         <span onClick={toggleDropdown} className="navburger-span"><div></div></span>
       </h1>
-      <div className="dropdown dropdown--hidden">
+      <div className="dropdown">
         { user && 
           <>
             <a className="dropdown_link">&gt; {user.username}</a>
@@ -47,9 +55,11 @@ const Header = () => {
             <a className="dropdown_link" onClick={() => history.push("/signup")}>&gt; signup</a>
           </>
         }
-        <a className="dropdown_link">&gt; messages</a>
+        <a className="dropdown_link">&gt; post</a>
+        <a className="dropdown_link">&gt; messages{placeHolderNum()}</a>
+        <a className="dropdown_link">&gt; matches{placeHolderNum()}</a>
+        <a className="dropdown_link">&gt; liked</a>
         <a className="dropdown_link">&gt; map</a>
-        <a className="dropdown_link">&gt; artists</a>
         { user && 
           <a className="dropdown_link" onClick={onLogout}>&gt; logout</a>
         }

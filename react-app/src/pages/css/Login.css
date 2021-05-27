@@ -30,10 +30,11 @@
   /* border: 1px solid black; */
   width: 200px;
   box-sizing: border-box;
-  padding: 7.5px 10px 6px;
-  font-size: 14px;
-  font-family: serif;
+  padding: 7.5px 10px 6px 12px;
+  font-size: 12px;
+  font-family: sans-serif;
   letter-spacing: .25px;
+  margin-left: -5px;
 }
 
 .login-form__input:nth-last-of-type(1) {
@@ -60,6 +61,6 @@
 
 .signup-text {
   white-space: normal;
-  font-size: 18px;
-  margin-bottom: 35px;
+  font-size: 16px;
+  margin-bottom: 25px;
 }

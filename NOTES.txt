@@ -1,0 +1,8 @@
+making a new alembic migration
+
+pipenv shell
+flask db -m 'a new migration'
+
+OR just add to an existing migration and then...
+flask db downgrade
+flask db upgrade
