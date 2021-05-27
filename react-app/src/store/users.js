@@ -7,8 +7,9 @@ const getUser = user => ({
   payload: user
 })
 
-const getUsers = () => ({
-  type: GET_USERS
+const getUsers = users => ({
+  type: GET_USERS,
+  payload: users
 })
 
 const initialState = { users: {} };
