@@ -23,12 +23,13 @@ const User = () => {
   return (
     <div>
       <Header />
-      <h1>{users[requestedUserId] ? (users[requestedUserId].display_name || users[requestedUserId].username) : null }</h1>
-      <h2>{ users[requestedUserId] ? users[requestedUserId].location : null }</h2>
-      <h3>{ users[requestedUserId] ? users[requestedUserId].bfa : null }</h3>
-      <h3>{ users[requestedUserId] ? users[requestedUserId].mfa : null }</h3>
-      <a target="new" href={users[requestedUserId] ? users[requestedUserId].link_url : null}>{users[requestedUserId] ? (users[requestedUserId].link_text || users[requestedUserId].link_url) : null }</a>
-      {/* <p target="new">{ users[requestedUserId] ? null : "No such user!" }</p> */}
+      <div className="user-wrapper">
+        <h1 className="user-display_name">{users[requestedUserId] ? (users[requestedUserId].display_name || users[requestedUserId].username) : null }</h1>
+        <h2 className="user-bfa">{ users[requestedUserId] ? users[requestedUserId].bfa : null }</h2>
+        <h2 className="user-mfa">{ users[requestedUserId] ? users[requestedUserId].mfa : null }</h2>
+        <h2 className="user-location">{ users[requestedUserId] ? users[requestedUserId].location : null }</h2>
+        <a className="user-link_url" target="new" href={users[requestedUserId] ? users[requestedUserId].link_url : null}>{users[requestedUserId] ? (users[requestedUserId].link_text || users[requestedUserId].link_url) : null }</a>
+      </div>
     </div>
   )
 }

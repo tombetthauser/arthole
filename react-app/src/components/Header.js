@@ -60,6 +60,7 @@ const Header = () => {
         <a className="dropdown_link">&gt; matches{placeHolderNum()}</a>
         <a className="dropdown_link">&gt; liked</a>
         <a className="dropdown_link">&gt; map</a>
+        <a className="dropdown_link">&gt; art</a>
         { user && 
           <a className="dropdown_link" onClick={onLogout}>&gt; logout</a>
         }
