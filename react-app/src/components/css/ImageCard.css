@@ -1,0 +1,17 @@
+.imagecard-img {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.imagecard-text {
+  margin-bottom: 75px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.imagecard-text-like {
+  color: cornflowerblue;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
