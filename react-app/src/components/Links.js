@@ -30,7 +30,7 @@ function Links() {
             <>
               <li><Link className="intro-text__link" to={`user/${user.id}`}>&gt; {user.username}</Link></li>
               <li><a className="intro-text__link" onClick={onLogout}>&gt; logout</a></li>
-              <li><a className="intro-text__link" onClick={onLogout}>&gt; post</a></li>
+              <li><Link className="intro-text__link" to={`post`}>&gt; post</Link></li>
             </>
         }
         { location !== "/" &&  

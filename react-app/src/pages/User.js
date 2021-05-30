@@ -12,7 +12,9 @@ const User = () => {
   const currentPathArr = window.location.pathname.split("/");
   const requestedUserId = currentPathArr[currentPathArr.length - 1]
   const users = useSelector(state => state.users);
+  const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(async () => {
     if (!users[requestedUserId]) {
@@ -31,13 +33,25 @@ const User = () => {
   // var namesList = names.map(function (name) {
   //   return <li>{name}</li>;
   // })
+
+  const editButtons = (
+      <>
+        <button className="user-top-button">edit</button>
+        <button className="user-top-button" onClick={() => history.push('/post')}>add image</button>
+      </>
+  )
+
+  const likeUserButtons = (
+      <>
+        <button className="user-top-button">like user</button>
+      </>
+  )
   
   return (
     <div>
       <Header />
       <div className="user-wrapper">
-        <button className="user-top-button">edit</button>
-        <button className="user-top-button">add image</button>
+        { user && users[requestedUserId] && user.id === users[requestedUserId].id ? editButtons : likeUserButtons }
         <h1 className="user-display_name">{users[requestedUserId] ? (users[requestedUserId].display_name || users[requestedUserId].username) : null }</h1>
         <h2 className="user-mfa">{ users[requestedUserId] && users[requestedUserId].mfa ? `MFA, ${users[requestedUserId].mfa}` : null }</h2>
         <h2 className="user-bfa">{ users[requestedUserId] && users[requestedUserId].bfa ? `BFA, ${users[requestedUserId].bfa}` : null }</h2>

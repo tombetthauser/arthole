@@ -55,7 +55,8 @@ const Header = () => {
             <a className="dropdown_link" onClick={() => history.push("/signup")}>&gt; signup</a>
           </>
         }
-        <a className="dropdown_link">&gt; post</a>
+        {/* <a className="dropdown_link">&gt; post</a> */}
+        <a className="dropdown_link" onClick={() => history.push("/post")}>&gt; post</a>
         <a className="dropdown_link">&gt; messages{placeHolderNum()}</a>
         <a className="dropdown_link">&gt; matches{placeHolderNum()}</a>
         <a className="dropdown_link">&gt; liked</a>
