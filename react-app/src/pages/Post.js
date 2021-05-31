@@ -13,7 +13,6 @@ const Post = () => {
   const hideFooterText = () => {
     const footer = document.querySelector(".demo-footer");
     footer.style.opacity = 0;
-    // setFooterMessage(false);
     setTimeout(() => { footer.classList.add("demo-footer__hidden") }, 500)
   }
 
@@ -22,13 +21,7 @@ const Post = () => {
       <Header />
       <div className="login-wrapper">
         <h2 className="login-h2">New Image Upload</h2>
-        <p className="signup-text">Anyone can sign up for Arthole, whether you're an artist, a gallerist, a collector or just a fan. You don't have to sign up to look at art or artists on the platform, but once you do you'll be able to connect with artists you like and message them when you've found a match.</p>
-        {/* <p>
-          <br /><br />
-          Additionally if you're an artist you'll be able to upload your work to our internal feed and apply to have your work featured on the public-facing version of arthole. 
-          <br /><br />
-          In any case welcome and happy arting!
-        </p> */}
+        <p className="signup-text">After you upload an image it will be added to your profile page. It will also be visible in the swipable feed of images for other users to view.</p>
         <form className="login-form" onSubmit={e => e.preventDefault()}>
           <input
             className="login-form__input"
@@ -66,19 +59,28 @@ const Post = () => {
             // value={email}
             required
           />
+          <input
+            className="login-form__input"
+            type="file"
+            name="image_file"
+            // placeholder="Artwork / Image Year"
+            // onChange={updateEmail}
+            // value={email}
+            required
+          />
           <button className="login-form__submit" type="submit">Upload Image</button>
         </form>
       </div>
-      {/* { user || !footerMessage
+      { user || !footerMessage
         ? null
         : <div className="demo-footer">
             <p className="footer-text">
-              You are not currently logged in but feel free to explore!<br />If you want to upload a new image to ArtHole it's quick and easy to sign up!
+              You are not currently logged in and will not be able to post images.<br />Log in or sign up if you want to post images of your work!
             </p>
             <button onClick={() => history.push("/login")} className="footer-button">login / signup</button>
             <p onClick={hideFooterText} className="footer-hide">ⓧ</p>
           </div>
-      } */}
+      }
     </div>
   )
 }
